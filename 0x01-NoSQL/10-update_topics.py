@@ -18,7 +18,7 @@ def update_topics(mongo_collection, name, topics):
         result (pymongo collection object): updated mongodb collection
     """
 
-    result = mongo_collection.update(
+    result = mongo_collection.update_many(
         {"name": name},
         {"$set": {"topics": topics}}
         )
